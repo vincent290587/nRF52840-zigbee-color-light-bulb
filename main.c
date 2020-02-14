@@ -112,6 +112,10 @@
 #define COMMAND_BLUE                        "blue"                                  /**< UART command that will turn color light bulb to blue. */
 #define COMMAND_PURPLE                      "purple"                                /**< UART command that will turn color light bulb to purple. */
 
+#define LED2_R              LED_2
+#define LED2_G              LED_3
+#define LED2_B              LED_4
+
 static void zigbee_command_handler(const uint8_t * p_command_str, uint16_t length);
 
 BLE_NUS_DEF(m_nus, NRF_SDH_BLE_TOTAL_LINK_COUNT);                                   /**< BLE NUS service instance. */
@@ -1130,7 +1134,7 @@ static void zigbee_init(void)
 
     /* Set up Zigbee protocol main parameters. */
     zb_set_network_router_role(IEEE_CHANNEL_MASK);
-    zb_set_max_children(MAX_CHILDREN);
+    //zb_set_max_children(MAX_CHILDREN);
     zb_set_nvram_erase_at_start(bsp_button_is_pressed(ERASE_CONFIG_BUTTON) ? ZB_TRUE : ZB_FALSE);
     zb_set_keepalive_timeout(ZB_MILLISECONDS_TO_BEACON_INTERVAL(3000));
 
