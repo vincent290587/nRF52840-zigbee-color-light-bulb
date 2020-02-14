@@ -228,7 +228,7 @@ INC_FOLDERS += \
 
 # Libraries common to all targets
 LIB_FILES += \
-  $(SDK_ROOT)/external/zboss/lib/gcc/libzboss.ed.a \
+  $(SDK_ROOT)/external/zboss/lib/gcc/libzboss.a \
   $(SDK_ROOT)/external/zboss/lib/gcc/nrf_radio_driver_softdevice.a \
 
 # Optimization flags
@@ -247,7 +247,7 @@ CFLAGS += -DNRF_SD_BLE_API_VERSION=6
 CFLAGS += -DS140
 CFLAGS += -DSOFTDEVICE_PRESENT
 CFLAGS += -DSWI_DISABLE0
-CFLAGS += -DZB_ED_ROLE
+#CFLAGS += -DZB_ED_ROLE
 CFLAGS += -DZB_ROUTER_ROLE
 CFLAGS += -DZB_TRACE_LEVEL=0
 CFLAGS += -DZB_TRACE_MASK=0
@@ -276,7 +276,8 @@ ASMFLAGS += -DNRF_SD_BLE_API_VERSION=6
 ASMFLAGS += -DS140
 ASMFLAGS += -DSOFTDEVICE_PRESENT
 ASMFLAGS += -DSWI_DISABLE0
-ASMFLAGS += -DZB_ED_ROLE
+#ASMFLAGS += -DZB_ED_ROLE
+ASMFLAGS += -DZB_ROUTER_ROLE
 ASMFLAGS += -DZB_TRACE_LEVEL=0
 ASMFLAGS += -DZB_TRACE_MASK=0
 

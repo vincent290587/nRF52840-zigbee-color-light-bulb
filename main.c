@@ -1134,7 +1134,7 @@ static void zigbee_init(void)
 
     /* Set up Zigbee protocol main parameters. */
     zb_set_network_router_role(IEEE_CHANNEL_MASK);
-    //zb_set_max_children(MAX_CHILDREN);
+    zb_set_max_children(MAX_CHILDREN);
     zb_set_nvram_erase_at_start(bsp_button_is_pressed(ERASE_CONFIG_BUTTON) ? ZB_TRUE : ZB_FALSE);
     zb_set_keepalive_timeout(ZB_MILLISECONDS_TO_BEACON_INTERVAL(3000));
 
